@@ -12,6 +12,7 @@ namespace инфбезз2._2
             if (checkBox2.Checked == true)
             {
                 // Алфавиты
+                char[] fAlphabet = "abcdefghijklmnopqrstuvwxyz .,!:;?-".ToCharArray();
                 char[] firstAlphabet = "vwxyz .,!:;?-klmnopqrstuabcdefghij".ToCharArray();
                 char[] secondAlphabet = "z .xy,!st:;qr?-uvwlmnopabcdefghijk".ToCharArray();
                 char[] thirdAlphabet = "z .xy,!st;:qr?-uvwlmnopabcdefghijk".ToCharArray();
@@ -33,15 +34,15 @@ namespace инфбезз2._2
                     // Исходя из порядкового номера, выбираем нужный алфавит и заменяем символ на соответствующий ему символ в выбранном алфавите
                     if (charPositionInWord % 3 == 1)
                     {
-                        encryptedWord += firstAlphabet[Array.IndexOf(firstAlphabet, inputChars[i])];
+                        encryptedWord += firstAlphabet[Array.IndexOf(fAlphabet, inputChars[i])];
                     }
                     else if (charPositionInWord % 3 == 2)
                     {
-                        encryptedWord += secondAlphabet[Array.IndexOf(firstAlphabet, inputChars[i])];
+                        encryptedWord += secondAlphabet[Array.IndexOf(fAlphabet, inputChars[i])];
                     }
                     else if (charPositionInWord % 3 == 0)
                     {
-                        encryptedWord += thirdAlphabet[Array.IndexOf(firstAlphabet, inputChars[i])];
+                        encryptedWord += thirdAlphabet[Array.IndexOf(fAlphabet, inputChars[i])];
                     }
                 }
 
@@ -115,6 +116,7 @@ namespace инфбезз2._2
             if (checkBox2.Checked == true)
             {
                 // Алфавиты
+                char[] fAlphabet = "abcdefghijklmnopqrstuvwxyz .,!:;?-".ToCharArray();
                 char[] firstAlphabet = "vwxyz .,!:;?-klmnopqrstuabcdefghij".ToCharArray();
                 char[] secondAlphabet = "z .xy,!st:;qr?-uvwlmnopabcdefghijk".ToCharArray();
                 char[] thirdAlphabet = "z .xy,!st;:qr?-uvwlmnopabcdefghijk".ToCharArray();
@@ -135,15 +137,15 @@ namespace инфбезз2._2
                     // Исходя из порядкового номера, выбираем нужный алфавит и заменяем символ на соответствующий ему символ в выбранном алфавите
                     if (charPositionInWord % 3 == 1)
                     {
-                        encryptedWord += firstAlphabet[Array.IndexOf(firstAlphabet, inputChars[i])];
+                        encryptedWord += fAlphabet[Array.IndexOf(firstAlphabet, inputChars[i])];
                     }
                     else if (charPositionInWord % 3 == 2)
                     {
-                        encryptedWord += firstAlphabet[Array.IndexOf(secondAlphabet, inputChars[i])];
+                        encryptedWord += fAlphabet[Array.IndexOf(secondAlphabet, inputChars[i])];
                     }
                     else if (charPositionInWord % 3 == 0)
                     {
-                        encryptedWord += firstAlphabet[Array.IndexOf(thirdAlphabet, inputChars[i])];
+                        encryptedWord += fAlphabet[Array.IndexOf(thirdAlphabet, inputChars[i])];
                     }
                 }
                 textBox1.Text = encryptedWord;// Выводим зашифрованное слово
